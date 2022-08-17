@@ -2,19 +2,28 @@ package com.bridgelab;
 
 
     public class Employeewage {
-        public static void main (String[] args){
-            int isfulltime=1;
-            int emprateperhour=20;
-            int emphour=0;
-            int empwage=0;
-            int emptype = (int) (Math.random () * 10) % 2;
-            if (emptype == isfulltime) {
-                emphour = 8;
-            }else
-                emphour = 0;
-            empwage = emphour * emprateperhour;
-            System.out.println("empwage: " + empwage);
-
+        public static void main(String[] args) {
+            int is_Full_Time = 2;
+            int is_PART_Time = 1;
+            int EPM_RATE_PER_HOUR = 20;
+            int empHrs = 0;
+            int empWage = 0;
+            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+            switch (empCheck) {
+                case 1:
+                    System.out.println("Employee is full time present");
+                    empHrs = 8;
+                    break;
+                case 2:
+                    System.out.println("Employee is part time present.");
+                    empHrs = 4;
+                    break;
+                default:
+                    empHrs = 0;
+            }
+            empWage = empHrs * EPM_RATE_PER_HOUR;
+            System.out.println("Emp Wage: "+empWage);
         }
+
     }
 
